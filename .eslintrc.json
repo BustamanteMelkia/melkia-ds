@@ -1,0 +1,50 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:react/recommended",
+    "standard-with-typescript",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "max-len": ["error", { "code": 120 }],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": false,
+        "endOfLine": "auto",
+        "tabWidth": 2
+      }
+    ],
+    "@typescript-eslint/triple-slash-reference": "off"
+  },
+  "ignorePatterns": [
+    "*.css",
+    "*.svg",
+    "*.mdx",
+    "/public/",
+    "/.storybook/",
+    "/storybook-static/",
+    "tsconfig.json",
+    "vite.config.ts"
+  ]
+}
