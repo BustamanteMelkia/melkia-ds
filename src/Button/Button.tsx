@@ -1,48 +1,35 @@
-import React from "react";
-import "./button.css";
+import React, { type HTMLAttributes } from "react";
+import { createUseStyles } from "react-jss";
 
-interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: "small" | "medium" | "large";
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
+interface StylesProps {
+  size: "sm" | "md" | "lg";
+  variant: "primary" | "secondary" | "danger";
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
+export type Props = StylesProps & HTMLAttributes<HTMLButtonElement>;
+
+const useStyles = createUseStyles({
+  button: ({ variant }: StylesProps) => ({
+    backgroundColor: "blue",
+    color: "white",
+    border: "none",
+    padding: "8px 12px",
+    borderRadius: "8px",
+  }),
+});
+
+const Button = ({
+  children = "Click me!",
+  size = "md",
+  variant = "primary",
   ...props
-}: ButtonProps): JSX.Element => {
-  const mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
+}: Props): JSX.Element => {
+  const classes = useStyles({ variant, size });
   return (
-    <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(" ")}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
+    <button {...props} className={classes.button}>
+      {children}
     </button>
   );
 };
+
+export default Button;
