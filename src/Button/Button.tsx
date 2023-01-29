@@ -1,12 +1,14 @@
-import React, { type HTMLAttributes } from "react";
+import React, { type ReactNode, type HTMLAttributes } from "react";
 import { createUseStyles } from "react-jss";
 
 interface StylesProps {
   size: "sm" | "md" | "lg";
   variant: "primary" | "secondary" | "danger";
 }
-
-export type Props = StylesProps & HTMLAttributes<HTMLButtonElement>;
+interface BaseProps extends HTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+}
+export type Props = StylesProps & BaseProps;
 
 const useStyles = createUseStyles({
   button: ({ variant }: StylesProps) => ({

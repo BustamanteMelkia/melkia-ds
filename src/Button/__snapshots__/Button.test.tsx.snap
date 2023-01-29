@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches DOM Snapshot 1`] = `
+<button
+  className="button-0-2-1 button-d0-0-2-2"
+>
+  hello
+</button>
+`;
