@@ -12,7 +12,7 @@ export type Props = StylesProps & BaseProps;
 
 const useStyles = createUseStyles({
   button: ({ variant }: StylesProps) => ({
-    backgroundColor: "blue",
+    backgroundColor: "yellow",
     color: "white",
     border: "none",
     padding: "8px 12px",
