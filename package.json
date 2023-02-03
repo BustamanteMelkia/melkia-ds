@@ -10,7 +10,6 @@
     "lint:fix": "eslint --config=.eslintrc.json --fix",
     "test": "jest",
     "test:fix": "jest --updateSnapshot",
-    "chromatic": "npx chromatic --project-token=97d949451516",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
