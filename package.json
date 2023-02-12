@@ -1,9 +1,17 @@
 {
   "name": "melkia-ds",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "type": "module",
   "license": "MIT",
+  "author": {
+    "name": "Melquiades Bustamante",
+    "email": "bonfil99melkia@gmail.com"
+  },
+  "main": "dist/main.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "lint": "eslint --config=.eslintrc.json",
@@ -14,11 +22,10 @@
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-jss": "^10.9.2"
   },
   "devDependencies": {
@@ -54,9 +61,20 @@
     "jest-environment-jsdom": "^29.4.1",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
+    "semantic-release": "^20.1.0",
     "ts-jest": "^29.0.5",
     "typescript": "^4.9.4",
     "vite": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BustamanteMelkia/melkia-design-system.git"
   }
 }
