@@ -21,7 +21,7 @@ const useStyles = createUseStyles({
 });
 
 const Button = ({
-  children = "Click this!",
+  children = "Click this!!!",
   size = "md",
   variant = "primary",
   ...props
